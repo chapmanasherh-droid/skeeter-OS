@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skeeter Desktop OS</title>
+    <link rel="stylesheet" href="desktop/styles.css">
+</head>
+<body>
+    <!-- Desktop Background -->
+    <div class="desktop" id="desktop">
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="taskbar-left">
+                <button class="start-btn" id="startBtn">
+                    <span class="start-icon">🖥️</span>
+                    <span class="start-text">Skeeter OS</span>
+                </button>
+                <div class="taskbar-apps" id="taskbarApps"></div>
+            </div>
+            <div class="taskbar-right">
+                <div class="system-tray">
+                    <span class="time" id="time">00:00</span>
+                    <span class="date" id="date">Jan 1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Menu -->
+        <div class="start-menu" id="startMenu">
+            <div class="start-menu-header">
+                <h2>Skeeter OS</h2>
+                <button class="close-start" id="closeStart">×</button>
+            </div>
+            <div class="start-menu-apps">
+                <button class="start-menu-item" data-app="files">
+                    <span class="icon">📁</span>
+                    <span class="label">File Manager</span>
+                </button>
+                <button class="start-menu-item" data-app="devlog">
+                    <span class="icon">📝</span>
+                    <span class="label">Development Log</span>
+                </button>
+                <button class="start-menu-item" data-app="notes">
+                    <span class="icon">📄</span>
+                    <span class="label">Text Editor</span>
+                </button>
+                <button class="start-menu-item" data-app="calculator">
+                    <span class="icon">🧮</span>
+                    <span class="label">Calculator</span>
+                </button>
+                <button class="start-menu-item" data-app="weather">
+                    <span class="icon">🌤️</span>
+                    <span class="label">Dashboard</span>
+                </button>
+                <button class="start-menu-item" data-app="theme">
+                    <span class="icon">🎨</span>
+                    <span class="label">Theme Settings</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Windows Container -->
+        <div class="windows-container" id="windowsContainer"></div>
+
+        <!-- Context Menu -->
+        <div class="context-menu" id="contextMenu">
+            <button class="context-item" data-action="refresh">🔄 Refresh</button>
+            <button class="context-item" data-action="settings">⚙️ Settings</button>
+            <button class="context-item" data-action="about">ℹ️ About</button>
+        </div>
+    </div>
+
+    <script src="desktop/windows.js"></script>
+    <script src="desktop/apps.js"></script>
+    <script src="desktop/desktop.js"></script>
+</body>
+</html>

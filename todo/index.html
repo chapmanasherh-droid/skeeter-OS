@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skeeter-OS Todo List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-wrapper">
+            <!-- Header -->
+            <header class="header">
+                <h1>📋 Skeeter Todo</h1>
+                <p class="subtitle">Stay organized and productive</p>
+            </header>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-box">
+                    <span class="stat-label">Total</span>
+                    <span class="stat-number" id="totalCount">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Completed</span>
+                    <span class="stat-number completed" id="completedCount">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Pending</span>
+                    <span class="stat-number pending" id="pendingCount">0</span>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        class="todo-input" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                    >
+                    <select id="prioritySelect" class="priority-select">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button id="addBtn" class="add-btn">Add Task</button>
+                </div>
+                <div class="quick-actions">
+                    <button id="clearCompletedBtn" class="action-btn clear-btn">Clear Completed</button>
+                    <button id="exportBtn" class="action-btn export-btn">Export</button>
+                    <button id="importBtn" class="action-btn import-btn">Import</button>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="high">High Priority</button>
+            </div>
+
+            <!-- Todo List -->
+            <div class="todo-list" id="todoList">
+                <div class="empty-state">
+                    <p>🎉 No tasks yet. Add one to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden import input -->
+    <input type="file" id="fileInput" style="display: none;" accept=".json">
+
+    <script src="todo.js"></script>
+</body>
+</html>
